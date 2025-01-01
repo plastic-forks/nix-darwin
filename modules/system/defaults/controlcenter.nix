@@ -3,30 +3,6 @@
 {
   options = {
 
-    system.defaults.controlcenter.BatteryShowPercentage = lib.mkOption {
-        type = lib.types.nullOr lib.types.bool;
-        default = null; 
-        description = ''
-            Apple menu > System Preferences > Control Center > Battery
-
-            Show a battery percentage in menu bar. Default is null.
-        '';
-    };
-
-    system.defaults.controlcenter.Sound = lib.mkOption {
-        type = lib.types.nullOr lib.types.bool;
-        apply = v: if v == null then null else if v == true then 18 else 24;
-        default = null; 
-        description = ''
-            Apple menu > System Preferences > Control Center > Sound
-
-            Show a sound control in menu bar . Default is null.
-
-            18 = Display icon in menu bar
-            24 = Hide icon in menu bar
-        '';
-    };
-
     system.defaults.controlcenter.Bluetooth = lib.mkOption {
         type = lib.types.nullOr lib.types.bool;
         apply = v: if v == null then null else if v == true then 18 else 24;
@@ -55,6 +31,21 @@
         '';
     };
 
+    system.defaults.controlcenter.FocusModes = lib.mkOption {
+        type = lib.types.nullOr lib.types.bool;
+        apply = v: if v == null then null else if v == true then 18 else 24;
+        default = null; 
+        description = ''
+            Apple menu > System Preferences > Control Center > Focus
+
+            Show a Focus control in menu bar. Default is null.
+
+            18 = Display icon in menu bar
+            24 = Hide icon in menu bar
+        '';
+    };
+
+
     system.defaults.controlcenter.Display = lib.mkOption {
         type = lib.types.nullOr lib.types.bool;
         apply = v: if v == null then null else if v == true then 18 else 24;
@@ -69,14 +60,14 @@
         '';
     };
 
-    system.defaults.controlcenter.FocusModes = lib.mkOption {
+    system.defaults.controlcenter.Sound = lib.mkOption {
         type = lib.types.nullOr lib.types.bool;
         apply = v: if v == null then null else if v == true then 18 else 24;
         default = null; 
         description = ''
-            Apple menu > System Preferences > Control Center > Focus
+            Apple menu > System Preferences > Control Center > Sound
 
-            Show a Focus control in menu bar. Default is null.
+            Show a sound control in menu bar. Default is null.
 
             18 = Display icon in menu bar
             24 = Hide icon in menu bar
@@ -94,6 +85,16 @@
 
             18 = Display icon in menu bar
             24 = Hide icon in menu bar
+        '';
+    };
+
+    system.defaults.controlcenter.BatteryShowPercentage = lib.mkOption {
+        type = lib.types.nullOr lib.types.bool;
+        default = null; 
+        description = ''
+            Apple menu > System Preferences > Control Center > Battery
+
+            Show a battery percentage in menu bar. Default is null.
         '';
     };
   };
